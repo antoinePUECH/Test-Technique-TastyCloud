@@ -15,7 +15,6 @@ export default {
   },
   methods: {
     buttonClick() {
-      console.log("Click")
       this.$emit('button:click')
     }
   }
