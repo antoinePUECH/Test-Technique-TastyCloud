@@ -1,4 +1,4 @@
-# test_technique_tastycloud
+# Test technique Tastycloud
 
 ## Project setup
 ```
