@@ -22,11 +22,11 @@ export default {
     }
   },
   computed: {
-    getProducts(category) {
-      if (!category) {
+    getProducts() {
+      if (!this.category) {
         return this.$store.getters.getAllProducts
       } else {
-        return this.$store.getters.getProductsByCategory(category)
+        return this.$store.getters.getProductsByCategory(this.category)
       }
     }
   },

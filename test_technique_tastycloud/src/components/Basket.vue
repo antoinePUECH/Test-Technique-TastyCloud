@@ -2,13 +2,16 @@
   <div class="text-center" data-app>
     <v-menu offset-y min-width="200" :close-on-content-click="false">
       <template v-slot:activator="{ on }">
-        <v-btn
-            color="primary"
-            dark
-            v-on="on"
-        >
-          Mon panier
-        </v-btn>
+          <v-btn
+              color="primary"
+              dark
+              v-on="on"
+          >
+            Mon panier
+          </v-btn>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 absolute right-1 top-2">
+          {{  getTotalQuantity }}
+        </span>
       </template>
       <v-list v-if="getProductsBasket.length >= 1">
         <v-list-item-content
@@ -61,6 +64,12 @@ export default {
       const products = this.getProductsBasket
       return products.reduce((total, product) => {
         return total + product.price * product.quantity
+      }, 0)
+    },
+    getTotalQuantity() {
+      const products = this.getProductsBasket
+      return products.reduce((total, product) => {
+        return total + product.quantity
       }, 0)
     }
   },
