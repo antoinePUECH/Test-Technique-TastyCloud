@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar/>
-    <ProductList @add:product="addProduct"/>
+    <ProductList :category="category"/>
   </div>
 </template>
 
@@ -15,12 +15,9 @@ export default {
     NavBar,
     ProductList
   },
-  methods: {
-    addProduct(product) {
-      console.log(product)
-      this.$emit('add:product', product)
-    }
-  }
+  props: {
+    category: String
+  },
 }
 </script>
 

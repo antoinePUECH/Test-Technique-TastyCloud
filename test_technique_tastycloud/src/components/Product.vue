@@ -11,7 +11,7 @@
             {{ name }}
           </a>
         </h3>
-        <p class="mt-1 text-sm text-gray-500">{{ color }}</p>
+        <p class="mt-1 text-sm text-gray-500 w-52">{{ description }}</p>
       </div>
       <p class="text-sm font-medium text-gray-900">{{ price }} €</p>
     </div>
@@ -24,7 +24,7 @@ export default {
   name: "Product",
   props: {
     name: String,
-    color: String,
+    description: String,
     price: Number,
     imageSrc: String,
     imageAlt: String
